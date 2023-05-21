@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Welcome to Astro.">
+    <header class="header">Contact</header>
+    <Header />
+    <Contact />
+    <Footer />
+</Layout>
+
+<style>
+    header {
+        height: 60px;
+        color: white;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media only screen and (min-width: 900px) {
+            color: black;
+            background-color: #b0c9ae;
+        }
+    }
+</style>

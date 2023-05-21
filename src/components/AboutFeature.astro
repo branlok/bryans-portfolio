@@ -1,0 +1,149 @@
+---
+---
+
+<div class="about-feature-container">
+    <img src="/bryan.webp" alt="" />
+    <div class="description-container">
+        <h2>Your Osteopathic physician</h2>
+        <h1>Bryan Lok</h1>
+        <p>
+            Welcome to the world of healing and wellness with Bryan, an experienced osteopathy
+            practitioner. Bryan believes in the body's natural ability to heal itself and uses
+            gentle manual therapy techniques to address imbalances and restore optimal function.
+            Whether you're experiencing pain, stress, or just looking for a way to enhance your
+            overall well-being, Bryan's personalized approach will leave you feeling refreshed,
+            rejuvenated and ready to take on the world. Book your appointment today and experience
+            the transformative power of osteopathy.
+        </p>
+        <div class="cta">
+            <button>Book Now</button>
+        </div>
+        <hr />
+        <a href="#reviews">See More</a>
+    </div>
+</div>
+<style>
+    .about-feature-container {
+        width: 100%;
+        position: relative;
+        border-bottom: 40px solid white;
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid white;
+            padding: 0px;
+            margin: 0px;
+            display: block;
+        }
+        hr {
+            margin: 40px 0px;
+        }
+        a {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: var(--font-size-sm);
+        }
+        .description-container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            .cta {
+                button {
+                    border-radius: 3px;
+                    width: 100%;
+                    padding: 20px 30px;
+                    background-color: #b0c9ae;
+                    font-size: var(--font-size-md);
+                    color: black;
+                    border-style: none;
+                    font-weight: bold;
+                    transition:0.2s;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: grey;
+                        color: black;
+                        transform: scale(0.98);
+                    }
+                }
+            }
+            h2 {
+                font-size: var(--font-size-sm);
+                margin: 0px;
+                padding: 0px;
+                color: #b0c9ae;
+            }
+            h1 {
+                font-size: var(--font-size-xxl);
+                margin: 0px;
+                padding: 0px;
+            }
+            &:after {
+                content: "";
+                width: 100px;
+                height: 50px;
+                border-radius: 0 0 50px 50px;
+                bottom: -80px;
+                right: 0px;
+                background-color: white;
+                position: absolute;
+                z-index: 5;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            img {
+                height: 800px;
+            }
+            .description-container {
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.5);
+                padding: 50px;
+                backdrop-filter: blur(12px);
+                color: black;
+                right: 0px;
+                top: 0px;
+                width: 500px;
+                .cta {
+                    button {
+                        background-color: black;
+                        color: white;
+                        width: auto;
+                    }
+                }
+            }
+            border-bottom: 40px solid black;
+            &:after {
+                content: "";
+                width: 150px;
+                height: 100px;
+                background-color: black;
+                border-radius: 0 0 70px 70px;
+                right: 0px;
+                bottom: -100px;
+                position: absolute;
+                z-index: 5;
+            }
+        }
+        @media only screen and (min-width: 1600px) {
+            .description-container {
+                width: 800px;
+                h2 {
+                    color: black;
+                }
+                p {
+                    width: 400px;
+                    line-height: 24px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+</style>

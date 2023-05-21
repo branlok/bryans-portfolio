@@ -1,0 +1,196 @@
+---
+let timeline = [
+    {
+        id: "cewds",
+        year: 2020,
+        title: "Graduated",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+        id: "wors",
+        year: 2022,
+        title: "Working",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in leo eget leo faucibus tristique id ac urna.",
+    },
+    {
+        id: "wfweors",
+        year: 2023,
+        title: "Osc. Certified",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in leo eget leo faucibus tristique id ac urna. Sed pharetra imperdiet consectetur. Morbi eget sapien dui.",
+    },
+];
+---
+
+<div class="timeline-container">
+    <h1>My Timeline</h1>
+    <div>
+        {
+            timeline.map((item) => {
+                return (
+                    <div class="section" id={item.id}>
+                        <div class="line-node">
+                            <div class="line">
+                                <div class="node">
+                                    <div class="extend-line" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <h1 class="year">{item.year}</h1>
+                            <h2>
+                                <span>{item.title}</span>
+                            </h2>
+                            <p>{item.description}</p>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+</div>
+
+<script>
+    import anime from "animejs/lib/anime.es.js";
+
+    for (let item of document.querySelectorAll(".extend-line")) {
+        let options = {
+            root: item,
+            rootMargin: "0px",
+            threshold: 1,
+        };
+
+        let animation = anime({
+        targets: item,
+        width: 200,
+        duration: 1050,
+        autoplay: false,
+    });
+
+        let callback = (entries, observer) => {
+            entries.forEach((entry) => {
+                // Each entry describes an intersection change for one observed
+                // target element:
+                //   entry.boundingClientRect
+                //   entry.intersectionRatio
+                //   entry.intersectionRect
+                if (entry.isIntersecting) {
+                    animation.play()
+                } else {
+                    animation.reversed()
+                }
+                //   entry.rootBounds
+                //   entry.target
+                //   entry.time
+            });
+        };
+
+        let observer = new IntersectionObserver(callback);
+        observer.observe(item);
+    }
+</script>
+
+<style>
+    .timeline-container {
+        width: 100%;
+        border-top: 2px solid white;
+        > h1 {
+            padding: 20px;
+            color: white;
+            border-bottom: 1px solid white;
+            margin: 0px;
+        }
+        .section {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            padding-left: 10px;
+            .line-node {
+                width: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                .line {
+                    width: 30px;
+                    height: 100%;
+                    background-color: #b0c9ae;
+                    position: relative;
+                    .node {
+                        position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        top: calc(50% - 50px);
+                        border-radius: 50%;
+                        left: -35px;
+                        background-color: #b0c9ae;
+                        &:before {
+                            content: "";
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            left: calc(50% - 10px);
+                            top: calc(50% - 10px);
+                            border-radius: 50%;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+            .message {
+                width: 70%;
+                color: white;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                max-width: 800px;
+                padding: 50px;
+                border-top: 1px solid white;
+                h1 {
+                    margin: 0px;
+                    padding-left: 5px;
+                }
+                h2 {
+                    padding: 5px 15px;
+                    background-color: white;
+                    border-radius: 50px;
+                    color: black;
+                    font-size: var(--font-size-sm);
+                    padding: 10px 5px;
+                    span {
+                        background-color: #dbdfaa;
+                        color: black;
+                        padding: 5px 30px;
+                        border-radius: 20px;
+                    }
+                }
+                p {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+            &:first-child {
+                .message {
+                    border-top: 1px solid transparent;
+                }
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            background-color: black;
+            .node {
+                position: relative;
+                .extend-line {
+                    width: 100%;
+                    height: 10px;
+                    position: absolute;
+                    left: calc(50% - 5px);
+                    top: calc(50% - 5px);
+                    background-color: white;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+</style>

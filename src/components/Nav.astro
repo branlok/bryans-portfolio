@@ -1,0 +1,75 @@
+---
+export interface Props {
+    promoMessage: string;
+    promoLink: string;
+}
+
+const {
+    promoMessage = "Currently offering a package deal for new patients on their first appointment with our clinic.",
+    promoLink = "/",
+} = Astro.props;
+---
+
+<nav class="nav-container">
+    <div class="logo"><b>Blok</b> Osteopathy</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<style>
+    .nav-container {
+        max-width: 800px;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 50px;
+        margin: 0px;
+        padding-top: 5px;
+        .logo {
+            display: none;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+            padding-top: 5px;
+        }
+        li {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+            width: 100px;
+            transition: 0.2s;
+            border-bottom: 5px solid transparent;
+        }
+        a {
+            width: 100%;
+            text-decoration: none;
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: bold;
+            border-bottom: 5px solid transparent;
+            cursor: pointer;
+            display: block;
+        }
+        @media only screen and (min-width: 900px) {
+            justify-content: space-between;
+            .logo {
+                display: block;
+            }
+            a {
+                color: black;
+            }
+            li:hover {
+                border-bottom: 5px solid black;
+            }
+        }
+    }
+</style>

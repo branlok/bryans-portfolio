@@ -1,0 +1,118 @@
+---
+import "@fontsource/archivo-black";
+---
+
+<footer class="content-container">
+    <div class="left">
+        <h1>Blok Osteopathy</h1>
+        <p>+1-647-794-1613</p>
+        <p>BC806 Park Drive</p>
+        <p>blok.osteo@gmail.com</p>
+    </div>
+    <div class="right">
+        <img
+            class="footer-img"
+            src="https://images.unsplash.com/photo-1539815208687-a0f05e15d601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3474&q=80"
+            alt=""
+        />
+        <div class="social-media">
+            <a href="">
+                <img class="icon-img" src="facebook.svg" alt="" />
+            </a>
+            <a href="">
+                <img class="icon-img" src="instagram.svg" alt="" />
+            </a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        border-top: 1px solid gray;
+        width: 100%;
+        padding: 35px;
+        background-color: rgb(21, 21, 21);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        .left {
+            /* border: 1px solid grey; */
+            border-radius: 5px 5px 0px 0px;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            padding: 35px;
+            h1 {
+                padding: 0px;
+                margin: 0px;
+                font-family: "Archivo Black", sans-serif;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+                border-bottom: 4px solid black;
+            }
+            p {
+                font-size: var(--font-size-sm);
+                font-weight: bold;
+                margin: 0px;
+                color: rgb(58, 58, 58);
+            }
+        }
+        .footer-img {
+            object-fit: cover;
+            height: 300px;
+            width: 100%;
+            border-radius: 0px 0px 5px 5px;
+            overflow: hidden;
+        }
+        .social-media {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin-top: 15px;
+            .icon-img {
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: black;
+            .left {
+                border-radius: 15px;
+                background-color: black;
+                color: white;
+                p {
+                    color: white;
+                }
+            }
+            .right {
+            }
+            .footer-img {
+                display: none;
+            }
+            .social-media {
+                width: 500px;
+                height: calc(100% + 70px);
+                background-color: rgb(20, 20, 20);
+                margin: -35px;
+                position: relative;
+                &:before {
+                    background: black;
+                    content: "";
+                    height: 100%;
+                    position: absolute;
+                    left: -25px;
+                    top: 0px;
+                    transform: skew(-10deg);
+                    width: 50px;
+                }
+            }
+        }
+    }
+</style>

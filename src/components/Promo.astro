@@ -1,0 +1,45 @@
+---
+export interface Props {
+    promoMessage: string;
+    promoLink: string;
+}
+
+const { promoMessage = "Limited Time offering", promoLink = "/" } = Astro.props;
+---
+
+<div class="promo-container">
+    <a href={promoLink}>
+        <p>
+            {promoMessage}
+        </p>
+    </a>
+</div>
+
+<style>
+    .promo-container {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(28, 28, 28);
+        padding: 0px 25px;
+        border-bottom: 1px solid grey;
+        border-bottom: 5px solid transparent;
+        border-image: linear-gradient(
+            to bottom right,
+            #b827fc 0%,
+            #2c90fc 25%,
+            #b8fd33 50%,
+            #fec837 75%,
+            #fd1892 100%
+        );
+        border-image-slice: 1;
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: bold;
+        }
+    }
+</style>

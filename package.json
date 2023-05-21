@@ -10,6 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "@fontsource/archivo-black": "^4.5.9",
+    "animejs": "^3.2.1",
+    "astro": "^2.4.1",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.23",
+    "postcss-extract-media-query": "^3.0.0",
+    "postcss-nested": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.7"
   }
 }
