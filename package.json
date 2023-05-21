@@ -13,6 +13,7 @@
     "@fontsource/archivo-black": "^4.5.9",
     "animejs": "^3.2.1",
     "astro": "^2.4.1",
+    "astro-robots-txt": "^0.5.0",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "postcss": "^8.4.23",
